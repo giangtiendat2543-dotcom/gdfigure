@@ -1,0 +1,42 @@
+<script>
+const pass = prompt("Nhập mật khẩu admin:");
+if (pass !== "jdfigure123") {
+  alert("Sai mật khẩu");
+  location.href = "index.html";
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin | JDfigure</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>📦 Quản lý đơn hàng</h2>
+<div id="orders"></div>
+
+<script>
+const orders = JSON.parse(localStorage.getItem("orders")) || [];
+const div = document.getElementById("orders");
+
+if (orders.length === 0) {
+  div.innerHTML = "<p>Chưa có đơn hàng</p>";
+}
+
+orders.forEach((o, i) => {
+  div.innerHTML += `
+    <div class="product">
+      <p><b>Đơn #${i+1}</b></p>
+      <ul>${o.items.map(x=>`<li>${x.name} - ${x.price.toLocaleString()} VNĐ</li>`).join("")}</ul>
+      <p><b>Tổng:</b> ${o.total.toLocaleString()} VNĐ</p>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
