@@ -1,0 +1,65 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #111;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav {
+  background: #e60012;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 40px;
+  text-align: center;
+  background: #222;
+  color: white;
+}
+
+.btn {
+  background: red;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.product {
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.call-btn, .zalo-btn {
+  position: fixed;
+  bottom: 20px;
+  padding: 10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.call-btn { right: 20px; }
+.zalo-btn { right: 70px; background: #0084ff; }
